@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Task Analyzer</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Task Analyzer</h1>
+
+    <!-- Add Single Task Form -->
+    <div class="single-task-form">
+      <h2>Add Single Task</h2>
+      <input type="text" id="title" placeholder="Title">
+      <input type="date" id="due_date" placeholder="Due Date">
+      <input type="number" id="importance" placeholder="Importance (1-10)" min="1" max="10">
+      <input type="number" id="hours" placeholder="Estimated Hours" min="1">
+      <input type="text" id="dependencies" placeholder="Dependencies (comma separated)">
+      <button id="add-task-btn">Add Task</button>
+    </div>
+
+    <!-- JSON Bulk Input -->
+    <div class="input-section">
+      <h2>Enter bulk of tasks (JSON Array)</h2>
+      <textarea id="tasks-input" placeholder='[{"title": "Fix bug", "due_date": "2025-12-01", "importance": 8, "estimated_hours": 3, "dependencies": []}]'></textarea>
+      <button id="analyze-btn">Analyze Tasks</button>
+      <button id="suggest-btn">Suggest Top 3 Tasks</button>
+    </div>
+
+    <!-- Sorting Dropdown -->
+    <div class="sorting-section">
+      <label for="sort-strategy">Sort Tasks By:</label>
+      <select id="sort-strategy">
+        <option value="smart">Smart Balance</option>
+        <option value="fastest">Fastest Wins</option>
+        <option value="impact">High Impact</option>
+        <option value="deadline">Deadline Driven</option>
+      </select>
+    </div>
+
+    <!-- Output Section -->
+    <div class="output-section">
+      <h2>Tasks</h2>
+      <div id="tasks-output"></div>
+    </div>
+  </div>
+
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* --- General --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8381fa;
+    color: #101010;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #cfbef7;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Headings --- */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1f2937;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+/* --- Input Section & Form --- */
+.input-section, .single-task-form, .sorting-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.single-task-form input, .single-task-form button,
+ .input-section button,
+.sorting-section select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* JSON Textarea Styling */
+.input-section textarea {
+    width: 100%;
+    min-height: 200px;      /* Make it taller */
+    max-height: 400px;      /* Prevent excessive height */
+    resize: vertical;       /* User can resize it vertically */
+    padding: 12px;
+    font-family: monospace; /* Better for JSON */
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    box-sizing: border-box;
+    background-color: #f9fafb;
+    overflow-y: auto;
+}
+
+.single-task-form button, .input-section button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.single-task-form button:hover, .input-section button:hover {
+    background-color: #2563eb;
+}
+
+/* --- Sorting Dropdown --- */
+.sorting-section label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.sorting-section select {
+    border: 1px solid #d1d5db;
+}
+
+/* --- Output Section --- */
+.output-section {
+    margin-top: 20px;
+}
+
+#tasks-output {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- Task Card --- */
+.task-card {
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 6px solid;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.task-card .task-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.task-card .task-details {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.task-card .task-explanation {
+    font-size: 13px;
+    color: #777;
+}
+
+/* --- Priority Colors --- */
+.task-card.high {
+    border-left-color: #ef4444; /* red */
+}
+
+.task-card.medium {
+    border-left-color: #f59e0b; /* orange */
+}
+
+.task-card.low {
+    border-left-color: #10b981; /* green */
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .single-task-form input, .single-task-form button,
+    .input-section textarea, .input-section button,
+    .sorting-section select {
+        font-size: 13px;
+    }
+
+    .task-card .task-title {
+        font-size: 15px;
+    }
+
+    .task-card .task-details, .task-card .task-explanation {
+        font-size: 12px;
+    }
+}
